@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipie</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand font-weight-bold" href="{% url 'recipe_list' %}">Recipie</a>
+        </nav>
+    </header>
+
+
+    {% block content %}
+
+    {% endblock %} 
+
+    <footer class="footer bg-dark text-white py-4 font-weight-bold">
+        <div class="container">
+            <p class="pt-2">&copy; 2022 Recipie</p>
+        </div>
+    </footer>
+</body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base/index.html' %}
+
+
+{% block content %}
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-3">{{ recipe.strMeal }}</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ recipe.strMealThumb }}" alt="{{ recipe.strMeal }}" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-6">
+                <p><strong>Category:</strong> {{ recipe.strCategory }}</p>
+                <p><strong>Area:</strong> {{ recipe.strArea }}</p>
+                <p><strong>Tags:</strong> {{ recipe.strTags }}</p>
+                <p><strong>Meal ID:</strong> {{ recipe.idMeal }}</p>
+                <hr>
+                <h3>Description:</h3>
+                <p>{{ recipe.strInstructions }}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3>Ingredients:</h3>
+        <ul>
+            {% for ingredient, measure in ingredients %}
+                <li>{{ ingredient }} - {{ measure }}</li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+        <a href="{% url 'recipe_list' %}" class="btn btn-secondary mb-4">Back to Recipes</a>
+    </div>
+
+</body>
+{% endblock %}

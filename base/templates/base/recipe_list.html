@@ -1,0 +1,23 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Recipes</h1>
+        <div class="row">
+            {% for recipe in recipes %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ recipe.strMealThumb }}" class="card-img-top" alt="{{ recipe.strMeal }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ recipe.strMeal }}</h5>
+                            <p class="card-text">{{ recipe.strInstructions|truncatewords:20 }}</p>
+                            <a href="{% url 'recipe_detail' recipe.idMeal %}" class="btn btn-dark">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}
